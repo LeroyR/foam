@@ -27,7 +27,7 @@ def main(mesh: str, spheres: str | None = None, depth: int = 1):
             spherization = jsload(json_file, cls = SphereDecoder)
 
         if depth > len(spherization):
-            raise RuntimeError(f"Depth {depth} greater than available ({len(data)})!")
+            raise RuntimeError(f"Depth {depth} greater than available ({len(spherization)})!")
 
         cm = mpl.colormaps['viridis']
         for sphere in spherization[depth].spheres:
